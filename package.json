@@ -1,0 +1,29 @@
+{
+	"name": "markdown-sup",
+	"version": "0.0.1",
+	"displayName": "Markdown Superscript",
+	"description": "Adds ^superscript^ syntax support to VS Code's built-in markdown preview",
+	"keywords": [
+		"markdown",
+		"superscript"
+	],
+	"engines": {
+		"vscode": "^1.44.0"
+	},
+	"publisher": "DevHawk",
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [],
+	"main": "./extension.js",
+	"contributes": {
+		"markdown.markdownItPlugins": true
+	},
+	"scripts": {},
+	"devDependencies": {
+		"@types/vscode": "^1.44.0"
+	},
+	"dependencies": {
+		"markdown-it-sup": "^1.0.0"
+	}
+}

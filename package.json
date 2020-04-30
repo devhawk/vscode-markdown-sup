@@ -7,10 +7,18 @@
 		"markdown",
 		"superscript"
 	],
+	"icon": "logo.png",
+	"publisher": "DevHawk",
+	"license": "MIT",
+	"repository": {
+		"url": "https://github.com/devhawk/vscode-markdown-sup.git"
+	},
+	"bugs": {
+		"url": "https://github.com/devhawk/vscode-markdown-sup/issues"
+	},
 	"engines": {
 		"vscode": "^1.44.0"
 	},
-	"publisher": "DevHawk",
 	"categories": [
 		"Other"
 	],

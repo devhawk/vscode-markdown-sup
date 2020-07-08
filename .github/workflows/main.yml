@@ -1,0 +1,45 @@
+name: Build
+
+on:
+  push:
+    branches: 
+    - master
+    - release/v*
+  pull_request:
+    branches:
+    - master
+    - release/v*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        # fetch-depth 0 needed due to https://github.com/dotnet/Nerdbank.GitVersioning/issues/423
+        with:
+          fetch-depth: 0
+  
+      - name: Setup NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v1.5.0
+        with:
+          dotnet-version: 3.1.x
+  
+      - name: Create Package
+        run: |
+          npm ci
+          npm run setversion
+          npm run package
+  
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: vsix
+          path: markdown-sup-*.vsix
+  
